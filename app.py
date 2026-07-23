@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-import os
 
 st.set_page_config(page_title="Churn & Retention Dashboard", layout="wide")
 
@@ -40,7 +39,7 @@ filtered = df[
 ].copy()
 
 # Header
-st.title("📊 Churn & Retention Dashboard")
+st.title("Churn & Retention Dashboard")
 st.markdown("*Interactive analysis of customer churn risk and retention opportunities*")
 
 # Key metrics
@@ -54,7 +53,7 @@ m1.metric("Total Customers", f"{len(filtered):,}")
 m2.metric("Churn Rate", f"{churn_rate:.1f}%")
 m3.metric("Churned Customers", f"{len(churned):,}")
 m4.metric("Est. Revenue at Risk (12mo)", f"${revenue_at_risk:,.0f}", 
-          help="Estimate = avg monthly charge of churned customers × 12 months × count. For planning purposes only.")
+          help="Estimate = avg monthly charge of churned customers x 12 months x count. For planning purposes only.")
 
 st.divider()
 
@@ -96,34 +95,34 @@ with right:
 st.divider()
 
 # Retention recommendations
-st.subheader("🎯 Top 3 Recommended Retention Actions")
+st.subheader("Top 3 Recommended Retention Actions")
 
 recommendations = [
     {
         "rank": 1,
         "action": "Contract-upgrade incentive campaign",
         "target": "Month-to-month customers with tenure > 6 months",
-        "est_cost": "$15–25 per customer",
-        "est_revenue_saved": "$180–360 per converted customer/year",
-        "roi": "7–24x",
-        "rationale": "Month-to-month contracts show 3–4× higher churn than annual contracts. A targeted discount or service bundle for upgrading to annual contracts locks in revenue and reduces churn probability."
+        "est_cost": "$15-25 per customer",
+        "est_revenue_saved": "$180-360 per converted customer/year",
+        "roi": "7-24x",
+        "rationale": "Month-to-month contracts show 3-4x higher churn than annual contracts. A targeted discount or service bundle for upgrading to annual contracts locks in revenue and reduces churn probability."
     },
     {
         "rank": 2,
         "action": "Proactive outreach for high-charge, low-tenure segment",
         "target": "Customers paying >$70/month with tenure < 12 months",
-        "est_cost": "$8–12 per touch (email + call)",
+        "est_cost": "$8-12 per touch (email + call)",
         "est_revenue_saved": "$840+ per retained customer/year",
-        "roi": "70–105x",
+        "roi": "70-105x",
         "rationale": "High monthly charges with low tenure indicate price sensitivity. Early engagement (welcome call, usage tips, loyalty preview) prevents buyer's remorse and reduces early-stage churn."
     },
     {
         "rank": 3,
         "action": "Add-on service bundling (security + support)",
         "target": "All customers without OnlineSecurity or TechSupport",
-        "est_cost": "$5–10 per customer (marginal cost of features)",
-        "est_revenue_saved": "$120–240 per retained customer/year",
-        "roi": "12–48x",
+        "est_cost": "$5-10 per customer (marginal cost of features)",
+        "est_revenue_saved": "$120-240 per retained customer/year",
+        "roi": "12-48x",
         "rationale": "Customers with security and tech support add-ons show measurably lower churn. Bundling these at a slight discount increases stickiness and perceived value."
     }
 ]
@@ -136,10 +135,10 @@ for rec in recommendations:
             st.markdown(f"**ROI: {rec['roi']}**")
         with c2:
             st.markdown(f"**{rec['action']}**")
-            st.markdown(f"🎯 **Target:** {rec['target']}  |  💰 **Cost:** {rec['est_cost']}  |  💵 **Revenue Saved:** {rec['est_revenue_saved']}")
-            st.markdown(f"📌 *Rationale:* {rec['rationale']}")
+            st.markdown(f"Target: {rec['target']}  |  Cost: {rec['est_cost']}  |  Revenue Saved: {rec['est_revenue_saved']}")
+            st.markdown(f"*Rationale:* {rec['rationale']}")
         st.divider()
 
 # Data table
-with st.expander("📋 View Filtered Data"):
+with st.expander("View Filtered Data"):
     st.dataframe(filtered, use_container_width=True)
