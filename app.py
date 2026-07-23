@@ -9,7 +9,7 @@ st.set_page_config(page_title="Churn & Retention Dashboard", layout="wide")
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/telco_churn.csv")
+    df = pd.read_csv("telco_churn.csv")
     df["MonthlyCharges"] = pd.to_numeric(df["MonthlyCharges"], errors="coerce")
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
     df["tenure"] = pd.to_numeric(df["tenure"], errors="coerce")
