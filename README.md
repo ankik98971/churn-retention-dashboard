@@ -4,11 +4,10 @@
 
 **Approach:** This interactive dashboard segments customers by contract type and tenure, quantifies revenue at risk, and surfaces three ranked retention actions with estimated ROI — turning raw churn data into a stakeholder-ready action plan.
 
-🔗 **Live Demo:** [https://your-app-name.streamlit.app](https://your-app-name.streamlit.app) *(update after deploying on Streamlit Community Cloud)*
+🔗 **Live Demo:** [https://your-app-name.streamlit.app](https://your-app-name.streamlit.app](https://churn-retention-dashboard-brg6vnuu3verqvj3x8karp.streamlit.app/)) *(update after deploying on Streamlit Community Cloud)*
 
-📸 **Screenshot:** *(add a screenshot of the dashboard here)*
+<img width="1692" height="935" alt="Screenshot 2026-07-24 at 10 33 45 PM" src="https://github.com/user-attachments/assets/f4fd959f-0db2-4076-8d00-6b08bb779d66" />
 
----
 
 ## Approach
 
